@@ -1,0 +1,39 @@
+main
+	=expresion*
+expresion
+	= (for/while/func/if/inicializar)
+func
+	=("FUNCION"/"funcion") _ cad _ "{"_ (cad (_ "," _ cad)+/cad)* _"}" _ 
+    "("_ expresion* _")"
+while
+	="mientras:" _ cad _ comp _ num _ ":" _ "(" _ expresion* _ ")"_
+if
+	= "si:"_ (cad _ (comp _ num/_":=" _ [\"] _ cad _ [\"])) 
+    (_ compuer _ (cad _ (comp _ num/_":=" _ [\"] _ cad _ [\"])))*_":"_"("_ expresion* _")"_
+for
+	="para:"_ cad _":=" _ num _ "hasta" _ cad _ 
+    comp _ num _ "_" _ cad _ aumento _ "(" _ expresion* _")"_
+inicializar
+	= declaracion _(":="_ ([\"] _ cad* _ [\"]/num/arreglo))* _
+aumento
+	= ("++"/"--"/("+"/"-")num)_
+declaracion
+	= "var" __ cad
+    
+compuer
+	=("&&"/"||")
+comp
+	=("<="/">="/"="/"<"/">")
+arreglo
+	= "["_ (_ "," _ (num/[\"] _ cad* _ [\"])+/(num/[\"] _ cad* _ [\"]))* _"]"
+cad
+	= [a-zA-Z]+
+    
+num
+	= [0-9]+
+    
+_ "whitespace"
+  = [ \t\n\r]*
+  
+__ "whitespace"
+  = [ \t\n\r]+

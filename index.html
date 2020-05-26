@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--BOOTSTRAP 4-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--GENERAL STYLES-->
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Interprete</title>
+
+</head>
+
+<body class="bg-dark">
+    <!--MAIN CONTAINER-->
+    <div class="container">
+        <!--HEADER CONTAINER-->
+        <div class="container row py-5">
+            <div class="col align-self-center Logo">
+                <img src="imgs/EscudoUnimag.png" alt="Logo-Unimag">
+            </div>
+            <div class="col align-self-center">
+                <h1 class="AudioWide TitleLogo text-white">INTERPRETE</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <!--MACHINE CONTAINER-->
+        <div class="card text-center">
+            <div class="card-header h3">
+                Código
+            </div>
+            <div class="" style="margin: 0px;">
+                <!--<div id="editor">function foo(items) { var x = "All this is syntax highlighted"; return x; } </div>-->
+                <textarea id="editor" class="form-control" rows="1" style="margin: 0px; min-width: 100%"></textarea>
+            </div>
+            <div class="card-footer text-muted">
+                <div class="row">
+
+                    <div class="col">
+                        <div class="btn-group control-buttons" role="group" aria-label="Basic example">
+                            <button id="validar" type="button" class="btn btn-primary">Validar</button>
+                            <button id="btnp" type="button" disabled="true" class="btn btn-primary" onclick="">Ejecutar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col"></div>
+            <div class="col align-self-center">
+                <div class="card bg-light mb-3">
+                    <div class="card-header text-center h4">Integrantes</div>
+                    <div class="card-body text-center">
+                        <div class="m-3">
+                            <h5 class="card-title m-0">Laura Roldán</h5>
+                            <p class="card-text m-0">Estudiante Ing. de Sistemas</p>
+                        </div>
+
+                        <div>
+                            <h5 class="card-title m-0">Devinson Trigos</h5>
+                            <p class="card-text m-0">Estudiante Ing. de Sistemas</p>
+                        </div>
+
+                        <div class="m-3">
+                            <h5 class="card-title m-0">Erwin Cacua</h5>
+                            <p class="card-text m-0">Estudiante Ing. de Sistemas</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5 class="card-title m-0">Jerson Ferrer</h5>
+                            <p class="card-text m-0">Estudiante Ing. de Sistemas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="container py-5 mt-5 text-center">
+        <div class="container border-top border-white py-3">
+            <p class="m-0 text-white">
+                Copyright &copy;2020 All rights reserved
+            </p>
+        </div>
+    </footer>
+
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <!--<script>
+        src = "https://cdn.jsdelivr.net/npm/@glidejs/glide"
+    </script>-->
+    <!--<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js.map"></script>-->
+
+    <!--<script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/editcodeinit.js"></script>-->
+    <script src="js/parser.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
