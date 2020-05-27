@@ -371,17 +371,17 @@ window.PARSER = /*
     function peg$parseexpresion() {
       var s0;
 
-      s0 = peg$parseescriba();
+      s0 = peg$parsefor();
       if (s0 === peg$FAILED) {
-        s0 = peg$parsefor();
+        s0 = peg$parseinicializar();
         if (s0 === peg$FAILED) {
-          s0 = peg$parseinicializar();
+          s0 = peg$parsewhile();
           if (s0 === peg$FAILED) {
-            s0 = peg$parsewhile();
+            s0 = peg$parsefunc();
             if (s0 === peg$FAILED) {
-              s0 = peg$parsefunc();
+              s0 = peg$parseif();
               if (s0 === peg$FAILED) {
-                s0 = peg$parseif();
+                s0 = peg$parseescriba();
               }
             }
           }
@@ -2597,7 +2597,24 @@ window.PARSER = /*
                 if (s7 !== peg$FAILED) {
                   s8 = peg$parse_();
                   if (s8 !== peg$FAILED) {
-                    s9 = peg$parsecad();
+                    s9 = [];
+                    s10 = peg$parsecad();
+                    if (s10 === peg$FAILED) {
+                      s10 = peg$parsenum();
+                      if (s10 === peg$FAILED) {
+                        s10 = peg$parsedecimal();
+                      }
+                    }
+                    while (s10 !== peg$FAILED) {
+                      s9.push(s10);
+                      s10 = peg$parsecad();
+                      if (s10 === peg$FAILED) {
+                        s10 = peg$parsenum();
+                        if (s10 === peg$FAILED) {
+                          s10 = peg$parsedecimal();
+                        }
+                      }
+                    }
                     if (s9 !== peg$FAILED) {
                       s10 = peg$parse_();
                       if (s10 !== peg$FAILED) {
@@ -2647,7 +2664,24 @@ window.PARSER = /*
                   if (s7 !== peg$FAILED) {
                     s8 = peg$parse_();
                     if (s8 !== peg$FAILED) {
-                      s9 = peg$parsecad();
+                      s9 = [];
+                      s10 = peg$parsecad();
+                      if (s10 === peg$FAILED) {
+                        s10 = peg$parsenum();
+                        if (s10 === peg$FAILED) {
+                          s10 = peg$parsedecimal();
+                        }
+                      }
+                      while (s10 !== peg$FAILED) {
+                        s9.push(s10);
+                        s10 = peg$parsecad();
+                        if (s10 === peg$FAILED) {
+                          s10 = peg$parsenum();
+                          if (s10 === peg$FAILED) {
+                            s10 = peg$parsedecimal();
+                          }
+                        }
+                      }
                       if (s9 !== peg$FAILED) {
                         s10 = peg$parse_();
                         if (s10 !== peg$FAILED) {

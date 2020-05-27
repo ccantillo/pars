@@ -1,0 +1,53 @@
+main
+	=expresion*
+expresion
+	= (for/inicializar/while/func/if/escriba)
+func
+	=("FUNCION"/"funcion") _ cad _ "{"_ (cad (_ "," _ cad)+/cad)* _"}" _ 
+    "("_ expresion*_ retorna* _")" _
+while
+	="mientras"_":" ("_" _ compuer _ "_" _ cad _ comp _ num _/_ cad _ comp _ num _ )* ":" _ "(" _ expresion* _ ")"_
+if
+	= "si" _ ":"_ (cad _ (comp _ (decimal/num)/_":=" _ ([\"] _ cad _ [\"]/_ cad _))) 
+    (_ "_"_ compuer _"_" _ (cad _ (comp _ (decimal/num)/_":=" _ 
+    ([\"] _ cad _ [\"]/_ cad _))))*_":"_"("_ expresion* _")"_
+    ifno _
+ifno
+	="si_no"_"("_ expresion* _")"
+for
+	="para" _ ":" _ cad _":=" _ (decimal/num) _ "hasta" _ cad _ 
+    comp _ (decimal/num) _ "_" _ cad _ aumento _ ":" _"(" _ expresion* _")"_
+inicializar
+	= declaracion _(":="_ 
+    ([\"] _ cad* _ [\"]/cad/(decimal/num)/arreglo)/signo _ 
+    ([\"] _ cad* _ [\"]/cad/(decimal/num)/arreglo))* _
+escriba
+	="escriba"_">>" _ (cad/[\"]_ (cad/(num/decimal))* _[\"])*_
+retorna
+	="retorna"_ (cad/(decimal/num)/[\"]_ cad _[\"])
+aumento
+	= ("++"/"--"/("+"/"-")num)_
+declaracion
+	= "var" __ str num*
+signo
+	="+"/"-"
+compuer
+	=("&&"/"||")
+comp
+	=("<="/">="/"="/"<"/">")
+arreglo
+	= "["_ (_ "|" _ ((decimal/num)/[\"] _ cad* _ [\"])+/((decimal/num)/[\"] _ cad* _ [\"]))* _"]"
+cad
+	= [a-zA-Z]+_
+str
+	= [a-zA-Z]+
+decimal
+	=num"."num
+num
+	= [0-9]+
+    
+_ "whitespace"
+  = [ \t\n\r]*
+  
+__ "whitespace"
+  = [ \t\n\r]+
