@@ -2,7 +2,7 @@ $(document).ready(() => {
     let s = window.PARSER;
     $("#validar").on('click', () => {
         try {
-            s.parse($("#editor").val());
+            s.parse(editor.getValue());
             swal({
                 title: "Exito!",
                 text: "la sintaxis es correcta!",
