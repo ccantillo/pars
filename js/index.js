@@ -3,7 +3,11 @@ $(document).ready(() => {
     $("#validar").on('click', () => {
         try {
             s.parse($("#editor").val());
-            alert("la sintaxis es correcta");
+            swal({
+                title: "Exito!",
+                text: "la sintaxis es correcta!",
+                icon: "success",
+            });
         } catch (error) {
             alert("la sintaxis es incorrecta");
         }
