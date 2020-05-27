@@ -3,9 +3,9 @@ $(document).ready(() => {
     $("#validar").on('click', () => {
         try {
             s.parse($("#editor").val());
-            console.log("bien, cachon");
+            alert("la sintaxis es correcta");
         } catch (error) {
-            console.log("nada, cachon");
+            alert("la sintaxis es incorrecta");
         }
     })
 })
