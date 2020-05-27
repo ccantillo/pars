@@ -9,7 +9,11 @@ $(document).ready(() => {
                 icon: "success",
             });
         } catch (error) {
-            alert("la sintaxis es incorrecta");
+            swal({
+                title: "Exito!",
+                text: "la sintaxis es correcta!",
+                icon: "error",
+            });
         }
     })
 })
