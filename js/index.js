@@ -10,8 +10,8 @@ $(document).ready(() => {
             });
         } catch (error) {
             swal({
-                title: "Exito!",
-                text: "la sintaxis es correcta!",
+                title: "error!",
+                text: "la sintaxis es incorrecta!",
                 icon: "error",
             });
         }
